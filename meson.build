@@ -57,7 +57,7 @@ if get_option('buildtype') != 'plain'
   test_c_args += '-fstack-protector-strong'
 endif
 
-glib_dep = dependency('glib-2.0', version: '>=2.71')
+glib_dep = dependency('glib-2.0', version: '>=2.66')
 
 foreach arg: test_c_args
   if cc.has_multi_arguments(arg)
