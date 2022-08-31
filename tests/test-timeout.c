@@ -13,7 +13,7 @@ static gboolean
 on_timeout (gpointer data)
 {
   g_main_loop_quit (data);
-  
+
   return G_SOURCE_REMOVE;
 }
 
@@ -30,6 +30,42 @@ test_gm_timeout_simple (void)
 }
 
 
+static gboolean
+on_timeout2 (gpointer data)
+{
+  g_assert_not_reached ();
+
+  return G_SOURCE_REMOVE;
+}
+
+
+static gboolean
+remove_timeout (gpointer data)
+{
+  g_source_remove (GPOINTER_TO_UINT (data));
+
+  return G_SOURCE_REMOVE;
+}
+
+
+static void
+test_gm_timeout_remove (void)
+{
+  g_autoptr (GMainLoop) loop = NULL;
+  guint id;
+
+  loop = g_main_loop_new (NULL, FALSE);
+  id = gm_timeout_add_seconds_once (1, (GSourceFunc)on_timeout2, NULL);
+  g_assert_nonnull (g_main_context_find_source_by_id (NULL, id));
+  g_idle_add (remove_timeout, GUINT_TO_POINTER (id));
+  /* End the main loop, id must not have fired yet */
+  g_timeout_add_seconds (2, (GSourceFunc)on_timeout, loop);
+  g_main_loop_run (loop);
+  /* source got removed */
+  g_assert_null (g_main_context_find_source_by_id (NULL, id));
+}
+
+
 gint
 main (gint argc,
       gchar *argv[])
@@ -37,6 +73,7 @@ main (gint argc,
   g_test_init (&argc, &argv, NULL);
 
   g_test_add_func ("/GM/timeout/simple", test_gm_timeout_simple);
+  g_test_add_func ("/GM/timeout/remove", test_gm_timeout_remove);
 
   return g_test_run ();
 }

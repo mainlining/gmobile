@@ -100,7 +100,7 @@ gm_timeout_source_once_new (gulong timeout_ms)
 						   sizeof (GmTimeoutOnce));
 
   timer->timeout_ms = timeout_ms;
-  g_source_set_name ((GSource *)timer, "[gm] boottime timeout source");
+  g_source_set_static_name ((GSource *)timer, "[gm] boottime timeout source");
   timer->fd = timerfd_create (CLOCK_BOOTTIME, 0);
   if (timer->fd == -1)
     return (GSource*)timer;
