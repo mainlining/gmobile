@@ -35,7 +35,6 @@ gm_timeout_once_prepare (GSource *source, gint *timeout)
   if (timer->armed)
     return FALSE;
 
-  g_debug ("Timeout prepare: %ld for %p", timer->timeout_ms / 1000, source);
   time_spec.it_value.tv_sec = timer->timeout_ms / 1000;
   time_spec.it_value.tv_nsec = (timer->timeout_ms % 1000) * 1000;
 
@@ -43,7 +42,10 @@ gm_timeout_once_prepare (GSource *source, gint *timeout)
   if (ret)
     g_warning ("Failed to set up timer: %s", strerror (ret));
 
-  g_debug ("Prepared %p", source);
+  g_debug ("Prepared %p[%s] for %ld seconds",
+	   source,
+	   g_source_get_name (source)?: "(null)",
+	   timer->timeout_ms / 1000);
   timer->armed = TRUE;
   /* Never wake up the source due to a timeout */
   *timeout = -1;
@@ -62,7 +64,7 @@ gm_timeout_once_dispatch (GSource    *source,
     return G_SOURCE_REMOVE;
   }
 
-  g_debug ("dispatch %p", source);
+  g_debug ("Dispatching %p[%s]", source, g_source_get_name (source)?: "(null)");
   callback (data);
 
   return G_SOURCE_REMOVE;
@@ -81,7 +83,7 @@ gm_timeout_once_finalize (GSource *source)
   g_source_remove_unix_fd (source, timer->tag);
   timer->tag = NULL;
 
-  g_debug ("Finalize %p", source);
+  g_debug ("Finalize %p[%s]", source, g_source_get_name (source)?: "(null)");
 }
 
 
@@ -98,7 +100,7 @@ gm_timeout_source_once_new (gulong timeout_ms)
 {
   int fdf, fsf;
   GmTimeoutOnce *timer = (GmTimeoutOnce *) g_source_new (&gm_timeout_once_source_funcs,
-                                                   sizeof (GmTimeoutOnce));
+                                                         sizeof (GmTimeoutOnce));
 
   timer->timeout_ms = timeout_ms;
 #if GLIB_CHECK_VERSION(2, 70, 0)
