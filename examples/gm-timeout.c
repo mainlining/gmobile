@@ -8,6 +8,8 @@
 
 /* Wait for n seconds taking suspend/resume into account */
 
+
+#define GMOBILE_USE_UNSTABLE_API
 #include "gmobile.h"
 
 #include <stdio.h>
