@@ -12,12 +12,13 @@
 #define GMOBILE_USE_UNSTABLE_API
 #include "gmobile.h"
 
-#include <stdio.h>
+#include <glib/gprintf.h>
+
 
 static void
 print_version (void)
 {
-  printf ("gm-timeout %s - Wait a bit\n", GM_VERSION);
+  g_printf ("gm-timeout %s - Wait a bit\n", GM_VERSION);
   exit (0);
 }
 
