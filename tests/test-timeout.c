@@ -6,6 +6,7 @@
  * Author: Guido Günther <agx@sigxcpu.org>
  */
 
+#define GMOBILE_USE_UNSTABLE_API
 #include "gmobile.h"
 
 

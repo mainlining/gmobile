@@ -8,5 +8,11 @@
 
 #pragma once
 
+#ifndef GMOBILE_USE_UNSTABLE_API
+#error    gmobile is unstable API. You must define GMOBILE_USE_UNSTABLE_API before including gmobile.h
+#endif
+
+#define _GMOBILE_INSIDE
+
 #include "gm-config.h"
 #include "gm-timeout.h"

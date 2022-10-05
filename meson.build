@@ -15,7 +15,8 @@ libdir = join_paths(prefix, get_option('libdir'))
 pkgdatadir = join_paths(datadir, meson.project_name())
 pkglibdir = join_paths(libdir, meson.project_name())
 
-global_c_args = []
+global_c_args = ['-DGMOBILE_COMPILATION']
+
 test_c_args = [
   '-Wcast-align',
   '-Wdate-time',

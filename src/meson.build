@@ -31,7 +31,7 @@ if get_option('gtk_doc')
     '--c-include=gmobile.h',
     '-L@0@'.format(meson.current_build_dir()),
     '--quiet',
-    '-DGMOBILE_COMPILATION',
+    '-DGMOBILE_USE_UNSTABLE_API',
    ]
 
   libgmobile_gir = gnome.generate_gir(gm_lib,
