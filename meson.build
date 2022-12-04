@@ -59,6 +59,7 @@ if get_option('buildtype') != 'plain'
 endif
 
 glib_dep = dependency('glib-2.0', version: '>=2.66')
+gio_dep = dependency('gio-2.0', version: '>=2.66')
 
 foreach arg: test_c_args
   if cc.has_multi_arguments(arg)

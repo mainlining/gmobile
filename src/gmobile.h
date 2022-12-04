@@ -15,4 +15,5 @@
 #define _GMOBILE_INSIDE
 
 #include "gm-config.h"
+#include "gm-devicetree.h"
 #include "gm-timeout.h"

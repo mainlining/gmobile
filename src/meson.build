@@ -1,4 +1,5 @@
 gm_deps = [
+  gio_dep,
   glib_dep,
   cc.find_library('m', required: false),
   cc.find_library('rt', required: false),
@@ -6,6 +7,8 @@ gm_deps = [
 
 gm_sources = files(
   'gmobile.h',
+  'gm-devicetree.c',
+  'gm-devicetree.h',  
   'gm-timeout.c',
   'gm-timeout.h',
 )
