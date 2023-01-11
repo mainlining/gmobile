@@ -21,7 +21,7 @@ foreach test : tests
 		 c_args : test_cflags,
                  pie: true,
                  link_with: gm_lib,
-                 dependencies: libgmobile_dep)
+                 dependencies: gmobile_dep)
   test(test, t, env: test_env)
 endforeach
 
