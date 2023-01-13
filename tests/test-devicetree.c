@@ -47,7 +47,7 @@ main (gint argc, gchar *argv[])
 {
   g_test_init (&argc, &argv, NULL);
 
-  g_test_add_func ("/GM/devicetree/get-compatibles", test_gm_devicetree_get_compatibles);
+  g_test_add_func ("/Gm/devicetree/get-compatibles", test_gm_devicetree_get_compatibles);
 
   return g_test_run ();
 }
