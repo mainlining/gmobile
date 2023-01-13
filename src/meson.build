@@ -1,6 +1,7 @@
 gm_deps = [
   gio_dep,
   glib_dep,
+  json_glib_dep,
   cc.find_library('m', required: false),
   cc.find_library('rt', required: false),
 ]
@@ -11,6 +12,8 @@ gm_sources = files(
   'gm-cutout.h',
   'gm-device-tree.c',
   'gm-device-tree.h',
+  'gm-display-panel.c',
+  'gm-display-panel.h',
   'gm-error.c',
   'gm-error.h',
   'gm-rect.c',
