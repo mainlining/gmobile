@@ -9,6 +9,10 @@ gm_sources = files(
   'gmobile.h',
   'gm-device-tree.c',
   'gm-device-tree.h',
+  'gm-error.c',
+  'gm-error.h',
+  'gm-svg-path.c',
+  'gm-svg-path.h',
   'gm-timeout.c',
   'gm-timeout.h',
 )

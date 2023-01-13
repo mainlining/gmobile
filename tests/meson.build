@@ -12,6 +12,7 @@ test_cflags = [
 
 tests = [
   'device-tree',
+  'svg-path',
   'timeout',
 ]
 
