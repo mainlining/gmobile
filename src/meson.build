@@ -11,6 +11,8 @@ gm_sources = files(
   'gm-device-tree.h',
   'gm-error.c',
   'gm-error.h',
+  'gm-rect.c',
+  'gm-rect.h',
   'gm-svg-path.c',
   'gm-svg-path.h',
   'gm-timeout.c',
