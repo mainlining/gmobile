@@ -14,7 +14,8 @@
 
 #define _GMOBILE_INSIDE
 
-#include "gm-error.h"
 #include "gm-config.h"
+#include "gm-cutout.h"
 #include "gm-device-tree.h"
+#include "gm-error.h"
 #include "gm-timeout.h"

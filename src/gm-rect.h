@@ -21,6 +21,6 @@ typedef struct _GmRect {
 
 GType gm_rect_get_type (void) G_GNUC_CONST;
 
-#define GM_TYPE_RECT (gm_rectangle_get_type ())
+#define GM_TYPE_RECT (gm_rect_get_type ())
 
 G_END_DECLS
