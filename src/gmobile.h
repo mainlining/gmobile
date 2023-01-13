@@ -19,4 +19,5 @@
 #include "gm-device-tree.h"
 #include "gm-display-panel.h"
 #include "gm-error.h"
+#include "gm-main.h"
 #include "gm-timeout.h"

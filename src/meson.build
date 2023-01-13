@@ -16,6 +16,8 @@ gm_public_sources = files(
   'gm-display-panel.h',
   'gm-error.c',
   'gm-error.h',
+  'gm-main.c',
+  'gm-main.h',
   'gm-rect.c',
   'gm-rect.h',
   'gm-svg-path.c',

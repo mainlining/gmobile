@@ -8,6 +8,7 @@
 
 #include "gm-cutout.h"
 #include "gm-display-panel.h"
+#include "gm-main.h"
 
 #include <json-glib/json-glib.h>
 
@@ -313,6 +314,24 @@ gm_display_panel_new_from_data (const gchar *data, GError **error)
     return NULL;
 
   return GM_DISPLAY_PANEL (json_gobject_deserialize (GM_TYPE_DISPLAY_PANEL, node));
+}
+
+GmDisplayPanel *
+gm_display_panel_new_from_resource (const gchar *resource_name, GError **error)
+{
+  g_autoptr (GBytes) bytes = NULL;
+
+  g_return_val_if_fail (resource_name && resource_name[0], NULL);
+
+  /* Make sure resources are initialized */
+  gm_init ();
+
+  bytes = g_resources_lookup_data (resource_name, 0, error);
+  if (bytes == NULL)
+    return NULL;
+
+  return GM_DISPLAY_PANEL (gm_display_panel_new_from_data ((const char *)g_bytes_get_data (bytes, NULL),
+                                                           error));
 }
 
 const char *

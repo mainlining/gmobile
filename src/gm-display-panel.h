@@ -17,6 +17,7 @@ G_DECLARE_FINAL_TYPE (GmDisplayPanel, gm_display_panel, GM, DISPLAY_PANEL, GObje
 
 GmDisplayPanel     *gm_display_panel_new (void);
 GmDisplayPanel     *gm_display_panel_new_from_data (const gchar *data, GError **error);
+GmDisplayPanel     *gm_display_panel_new_from_resource (const char *resource_name, GError **error);
 const char         *gm_display_panel_get_name (GmDisplayPanel *self);
 GListModel         *gm_display_panel_get_cutouts (GmDisplayPanel *self);
 int                 gm_display_panel_get_x_res (GmDisplayPanel *self);
