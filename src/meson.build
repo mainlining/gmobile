@@ -6,7 +6,7 @@ gm_deps = [
   cc.find_library('rt', required: false),
 ]
 
-gm_sources = files(
+gm_public_sources = files(
   'gmobile.h',
   'gm-cutout.c',
   'gm-cutout.h',
@@ -23,6 +23,11 @@ gm_sources = files(
   'gm-timeout.c',
   'gm-timeout.h',
 )
+
+gm_sources = [
+  gm_public_sources,
+  gm_resources,
+]
 
 gm_c_args = [
   '-DG_LOG_DOMAIN="gmobile"',

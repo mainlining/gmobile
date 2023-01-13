@@ -84,6 +84,7 @@ configure_file(
   configuration: config_h,
 )
 
+subdir('data')
 subdir('src')
 subdir('tests')
 subdir('examples')
