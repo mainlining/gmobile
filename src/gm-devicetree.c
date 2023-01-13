@@ -20,7 +20,7 @@
  * `sysfs_root/firmware/devicetree/base/compatible` on Linux.
  * If the path doesn't exist or host is not Linux return %NULL.
  *
- * Returns: compatible machine types or %NULL
+ * Returns:(transfer full): compatible machine types or %NULL
  */
 GStrv
 gm_devicetree_get_compatibles (const char *sysfs_root, GError **err)
