@@ -10,6 +10,8 @@ gm_public_sources = files(
   'gmobile.h',
   'gm-cutout.c',
   'gm-cutout.h',
+  'gm-device-info.c',
+  'gm-device-info.h',
   'gm-device-tree.c',
   'gm-device-tree.h',
   'gm-display-panel.c',

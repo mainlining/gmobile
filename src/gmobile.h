@@ -16,6 +16,7 @@
 
 #include "gm-config.h"
 #include "gm-cutout.h"
+#include "gm-device-info.h"
 #include "gm-device-tree.h"
 #include "gm-display-panel.h"
 #include "gm-error.h"
