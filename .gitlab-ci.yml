@@ -8,7 +8,7 @@ variables:
   DEPS: >-
     ccache build-essential libglib2.0-dev meson
     python3-toml python3-jinja2 python3-typogrify libgirepository1.0-dev git
-    gcovr
+    gi-docgen gcovr
 
 before_script:
   - echo "man-db man-db/auto-update boolean false" | debconf-set-selections
