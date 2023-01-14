@@ -14,6 +14,6 @@
 
 G_BEGIN_DECLS
 
-GStrv       gm_devicetree_get_compatibles (const char *sysfs_root, GError **err);
+GStrv       gm_device_tree_get_compatibles (const char *sysfs_root, GError **err);
 
 G_END_DECLS

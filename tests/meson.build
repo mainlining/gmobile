@@ -11,7 +11,7 @@ test_cflags = [
 ]
 
 tests = [
-  'devicetree',
+  'device-tree',
   'timeout',
 ]
 

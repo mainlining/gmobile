@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include "gm-devicetree.h"
+#include "gm-device-tree.h"
 
 #include <gio/gio.h>
 #include <glib.h>
@@ -12,7 +12,7 @@
 #define DT_COMPATIBLE_PATH "firmware/devicetree/base/compatible"
 
 /**
- * gm_devicetree_get_compatibles:
+ * gm_device_tree_get_compatibles:
  * @sysfs_root: Path where /sys is mounted. Defaults to `/sys` if %NULL is passed.
  * @err: return location for error or %NULL
  *
@@ -23,7 +23,7 @@
  * Returns:(transfer full): compatible machine types or %NULL
  */
 GStrv
-gm_devicetree_get_compatibles (const char *sysfs_root, GError **err)
+gm_device_tree_get_compatibles (const char *sysfs_root, GError **err)
 {
 #ifdef __linux__
   gsize len;

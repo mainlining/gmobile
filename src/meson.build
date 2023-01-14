@@ -7,8 +7,8 @@ gm_deps = [
 
 gm_sources = files(
   'gmobile.h',
-  'gm-devicetree.c',
-  'gm-devicetree.h',  
+  'gm-device-tree.c',
+  'gm-device-tree.h',
   'gm-timeout.c',
   'gm-timeout.h',
 )
