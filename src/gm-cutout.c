@@ -13,7 +13,7 @@
 /**
  * GmCutout:
  *
- * A display cutout or noth.
+ * A display cutout or notch.
  *
  * A display cutout is an area of a display that is not usable for
  * rendering e.g.  because a camera or speaker is placed there. This
@@ -22,7 +22,7 @@
  * systems is located at the top left display corner in the displays
  * natural orientation. Applications can query the area to avoid
  * for rendering via the `bounds` property so they don't need to
- * deal with the SVG path themself.
+ * deal with the SVG path themselves.
  */
 
 enum {
