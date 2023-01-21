@@ -6,9 +6,9 @@ stages:
 variables:
   DIST: bookworm
   DEPS: >-
-    ccache build-essential libglib2.0-dev meson
+    ccache build-essential libglib2.0-dev libjson-glib-dev meson
     python3-toml python3-jinja2 python3-typogrify libgirepository1.0-dev git
-    gcovr
+    gi-docgen gcovr
 
 before_script:
   - echo "man-db man-db/auto-update boolean false" | debconf-set-selections

@@ -60,6 +60,7 @@ endif
 
 glib_dep = dependency('glib-2.0', version: '>=2.66')
 gio_dep = dependency('gio-2.0', version: '>=2.66')
+json_glib_dep = dependency('json-glib-1.0')
 
 foreach arg: test_c_args
   if cc.has_multi_arguments(arg)
@@ -83,6 +84,7 @@ configure_file(
   configuration: config_h,
 )
 
+subdir('data')
 subdir('src')
 subdir('tests')
 subdir('examples')

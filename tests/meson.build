@@ -11,7 +11,10 @@ test_cflags = [
 ]
 
 tests = [
-  'devicetree',
+  'device-tree',
+  'display-panel',
+  'cutout',
+  'svg-path',
   'timeout',
 ]
 

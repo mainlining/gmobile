@@ -1,17 +1,37 @@
 gm_deps = [
   gio_dep,
   glib_dep,
+  json_glib_dep,
   cc.find_library('m', required: false),
   cc.find_library('rt', required: false),
 ]
 
-gm_sources = files(
+gm_public_sources = files(
   'gmobile.h',
-  'gm-devicetree.c',
-  'gm-devicetree.h',  
+  'gm-cutout.c',
+  'gm-cutout.h',
+  'gm-device-info.c',
+  'gm-device-info.h',
+  'gm-device-tree.c',
+  'gm-device-tree.h',
+  'gm-display-panel.c',
+  'gm-display-panel.h',
+  'gm-error.c',
+  'gm-error.h',
+  'gm-main.c',
+  'gm-main.h',
+  'gm-rect.c',
+  'gm-rect.h',
+  'gm-svg-path.c',
+  'gm-svg-path.h',
   'gm-timeout.c',
   'gm-timeout.h',
 )
+
+gm_sources = [
+  gm_public_sources,
+  gm_resources,
+]
 
 gm_c_args = [
   '-DG_LOG_DOMAIN="gmobile"',
