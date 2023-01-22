@@ -89,3 +89,12 @@ subdir('src')
 subdir('tests')
 subdir('examples')
 subdir('doc')
+
+summary({
+    'Examples': get_option('examples'),
+    'Tests': get_option('tests'),
+    'Docmentation': get_option('gtk_doc'),
+  },
+  bool_yn: true,
+  section: 'Build',
+)
