@@ -60,7 +60,8 @@ endif
 
 glib_dep = dependency('glib-2.0', version: '>=2.66')
 gio_dep = dependency('gio-2.0', version: '>=2.66')
-json_glib_dep = dependency('json-glib-1.0')
+json_glib_dep = dependency('json-glib-1.0', version: '>= 1.6.2',
+                   fallback: ['json-glib', 'json_glib_dep'])
 
 foreach arg: test_c_args
   if cc.has_multi_arguments(arg)
