@@ -1,8 +1,8 @@
 project('gmobile', 'c',
         version: '0.0.1',
         license: 'LGPLv2.1+',
-	meson_version: '>= 0.56.1',
-	default_options: [ 'warning_level=1', 'buildtype=debugoptimized', 'c_std=gnu11' ],
+        meson_version: '>= 0.56.1',
+        default_options: [ 'warning_level=1', 'buildtype=debugoptimized', 'c_std=gnu11' ],
 )
 
 cc = meson.get_compiler('c')
