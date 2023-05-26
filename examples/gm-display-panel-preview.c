@@ -123,7 +123,7 @@ int main (int argc, char **argv)
     {"compatible", 'c', 0, G_OPTION_ARG_STRING_ARRAY, &compatibles_opt,
      "Device tree compatibles to use for panel lookup ", NULL},
     {"output", 'o', 0, G_OPTION_ARG_STRING, &output_file,
-     "Sleep for that many seconds", NULL},
+     "The output file name", NULL},
     {"svg", 's', 0, G_OPTION_ARG_NONE, &svg,
      "Output svg instead of html", NULL},
     {"version", 0, 0, G_OPTION_ARG_NONE, &version,
