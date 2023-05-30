@@ -60,12 +60,18 @@ build_svg (GmDisplayPanel *panel)
     if (cutout) {
       const GmRect *bounds = gm_cutout_get_bounds (cutout);
       const char *name = gm_cutout_get_name (cutout) ?: "";
+      const char *cutout_path = gm_cutout_get_path (cutout);
+
+      if (cutout_path == NULL) {
+        g_warning ("Failed to get cutout path for '%s' - skipping", name);
+        continue;
+      }
 
       g_string_append_printf (svg,
     "        <!-- cutout %s -->\n"
     "        <path d=\"%s\" stroke=\"black\" stroke-width=\"2\" fill=\"none\" />\n",
                               name,
-                              gm_cutout_get_path (cutout));
+                              cutout_path);
       g_string_append_printf (svg,
     "        <!-- bbox of cutout %s -->\n"
     "        <rect x=\"%d\" y=\"%d\" width=\"%d\" height=\"%d\""
