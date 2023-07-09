@@ -14,4 +14,11 @@ example_display_panel_preview = executable(
   install: true
 )
 
+example_display_panel_run_phosh = executable(
+  'gm-display-panel-run-phosh',
+  ['gm-display-panel-run-phosh.c'],
+  dependencies: [gmobile_dep],
+  install: true
+)
+
 endif
