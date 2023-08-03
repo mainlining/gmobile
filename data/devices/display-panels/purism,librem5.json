@@ -3,14 +3,5 @@
   "x-res": 720,
   "y-res": 1440,
   "width": 65,
-  "height": 130,
-  "border-radius": 15,
-  "cutouts" : [
-    {
-      "name": "notch",
-      "path": "M 336 0
-               A 24 24 0 0 0 384 0
-               Z"
-    }
-  ]
+  "height": 130
 }
