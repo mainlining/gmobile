@@ -19,6 +19,7 @@ gmobile is licensed under the LGPLv2.1-or-later.
 The `main` branch has the current development version.
 
 ## Dependencies
+
 See `meson.build` for required dependencies.
 
 ## Building
@@ -31,6 +32,10 @@ way to get going is to do the following:
 
 # API docs
 API documentation is available at https://guidog.pages.gitlab.gnome.org/gmobile/
+
+# Adding a new device
+If you want to add display panel information for a new device see
+this post on [notch support](https://phosh.mobi/posts/notch-support/).
 
 # Getting in Touch
 * Issue tracker: https://gitlab.gnome.org/guidog/gmobile/-/issues
