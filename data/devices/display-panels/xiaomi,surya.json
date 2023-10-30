@@ -1,0 +1,20 @@
+{
+  "name": "Xiaomi POCO X3",
+  "x-res": 1080,
+  "y-res": 2400,
+  "border-radius": 90,
+  "width": 70,
+  "height": 154,
+  "cutouts" : [
+    {
+      "name": "notch",
+      "path": "M 504 0
+               H 504
+               V 91
+               H 576
+               V 0
+               H 504
+               Z"
+    }
+  ]
+}

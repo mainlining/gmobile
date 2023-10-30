@@ -21,10 +21,12 @@
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,curtana.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,daisy.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,dandelion.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,davinci.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,excalibur.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,gram.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,joyeuse.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,onclite.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,surya.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,lavender.json</file>
   </gresource>
 </gresources>
