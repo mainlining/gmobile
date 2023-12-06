@@ -1,4 +1,5 @@
 gm_deps = [
+  epoll_dep,
   gio_dep,
   glib_dep,
   json_glib_dep,
