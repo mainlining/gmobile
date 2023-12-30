@@ -27,6 +27,8 @@ gm_public_sources = files(
   'gm-svg-path.h',
   'gm-timeout.c',
   'gm-timeout.h',
+  'gm-util.c',
+  'gm-util.h',
 )
 
 gm_sources = [
