@@ -16,7 +16,11 @@
     <file preprocess="json-stripblanks">devices/display-panels/volla,mimameid.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/volla,vidofnir.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,beryllium.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,curtana.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,dandelion.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,excalibur.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,gram.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,joyeuse.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,onclite.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,lavender.json</file>
   </gresource>
