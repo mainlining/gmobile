@@ -14,6 +14,7 @@
     <file preprocess="json-stripblanks">devices/display-panels/volla,vidofnir.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,beryllium.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,dandelion.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,onclite.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,lavender.json</file>
   </gresource>
 </gresources>
