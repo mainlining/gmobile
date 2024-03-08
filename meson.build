@@ -81,7 +81,7 @@ config_h = configuration_data()
 config_h.set_quoted('GM_VERSION', meson.project_version())
 
 root_inc = include_directories('.')
-configure_file(
+gm_config_h = configure_file(
   output: 'gm-config.h',
   configuration: config_h,
 )

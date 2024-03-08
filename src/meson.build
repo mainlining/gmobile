@@ -8,31 +8,36 @@ gm_deps = [
 ]
 
 gm_public_sources = files(
-  'gmobile.h',
   'gm-cutout.c',
-  'gm-cutout.h',
   'gm-device-info.c',
-  'gm-device-info.h',
   'gm-device-tree.c',
-  'gm-device-tree.h',
   'gm-display-panel.c',
-  'gm-display-panel.h',
   'gm-error.c',
-  'gm-error.h',
   'gm-main.c',
-  'gm-main.h',
   'gm-rect.c',
-  'gm-rect.h',
   'gm-svg-path.c',
-  'gm-svg-path.h',
   'gm-timeout.c',
-  'gm-timeout.h',
   'gm-util.c',
+)
+
+gm_public_headers = files(
+  'gmobile.h',
+  'gm-cutout.h',
+  'gm-device-info.h',
+  'gm-device-tree.h',
+  'gm-display-panel.h',
+  'gm-error.h',
+  'gm-main.h',
+  'gm-rect.h',
+  'gm-svg-path.h',
+  'gm-timeout.h',
   'gm-util.h',
 )
+install_headers(gm_public_headers + [gm_config_h], subdir: 'gmobile')
 
 gm_sources = [
   gm_public_sources,
+  gm_public_headers,
   gm_resources,
 ]
 
@@ -61,9 +66,10 @@ gmobile_shared_dep = declare_dependency(
 
 pkgconfig = import('pkgconfig')
 pkgconfig.generate(
-        gm_lib,
-	description: 'Functions useful in mobile related, glib based projects',
-	url: 'https://world.pages.gitlab.gnome.org/Phosh/gmobile/',
+  gm_lib,
+  subdirs: 'gmobile',
+  description: 'Functions useful in mobile related, glib based projects',
+  url: 'https://world.pages.gitlab.gnome.org/Phosh/gmobile/',
 )
 
 if get_option('gtk_doc') or get_option('introspection')
