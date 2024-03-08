@@ -46,8 +46,7 @@ gm_lib = both_libraries(
   include_directories: root_inc,
   c_args: gm_c_args,
   dependencies: gm_deps,
-  # Will switch to '0' for the first release
-  soversion: '0c',
+  soversion: '0',
   install: true)
 
 gmobile_dep = declare_dependency(
