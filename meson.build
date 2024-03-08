@@ -95,6 +95,7 @@ subdir('doc')
 summary({
     'Examples': get_option('examples'),
     'Tests': get_option('tests'),
+    'Introspection': get_option('introspection'),
     'Docmentation': get_option('gtk_doc'),
   },
   bool_yn: true,

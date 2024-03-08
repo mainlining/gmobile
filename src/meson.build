@@ -66,7 +66,7 @@ pkgconfig.generate(
 	url: 'https://world.pages.gitlab.gnome.org/Phosh/gmobile/',
 )
 
-if get_option('gtk_doc')
+if get_option('gtk_doc') or get_option('introspection')
   gmobile_gir_extra_args = [
     '--c-include=gmobile.h',
     '-L@0@'.format(meson.current_build_dir()),
@@ -82,7 +82,7 @@ if get_option('gtk_doc')
            symbol_prefix: 'gm',
        identifier_prefix: 'Gm',
                 includes: ['Gio-2.0'],
-                 install: false,
+                 install: get_option('introspection'),
               extra_args: gmobile_gir_extra_args,
    )
 endif
