@@ -1,7 +1,7 @@
 [library]
 version = "@VERSION@"
 description = "Mobile friendly helpers"
-authors = "Purism SPC"
+authors = "The Phosh Developers"
 license = "LGPL-2.1-or-later"
 browse_url = "https://gitlab.gnome.org/World/Phosh/gmobile/"
 repository_url = "https://gitlab.gnome.org/World/Phosh/gmobile.git"
