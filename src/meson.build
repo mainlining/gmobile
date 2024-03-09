@@ -84,7 +84,7 @@ if get_option('gtk_doc') or get_option('introspection')
                  sources: gm_public_sources + gm_public_headers,
                nsversion: '0',
                namespace: 'Gm',
-         export_packages: 'gmobile-0',
+         export_packages: 'gmobile',
            symbol_prefix: 'gm',
        identifier_prefix: 'Gm',
                 includes: ['Gio-2.0'],
