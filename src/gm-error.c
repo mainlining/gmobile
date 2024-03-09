@@ -14,5 +14,7 @@
  * Gets the GM Error Quark.
  *
  * Returns: a #GQuark.
+ *
+ * Since: 0.0.1
  **/
 G_DEFINE_QUARK (gm-error-quark, gm_error)

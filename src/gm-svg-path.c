@@ -353,6 +353,8 @@ normalize_path (const char *path)
  * Returns: `TRUE` when parsing was successful, `FALSE` otherwise.
  *
  * See https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths for path syntax introduction.
+ *
+ * Since: 0.0.1
  */
 gboolean
 gm_svg_path_get_bounding_box (const char *path, int *x1, int *x2, int *y1, int *y2, GError **err)

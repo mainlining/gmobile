@@ -37,6 +37,8 @@ get_env_compatibles (void)
  * separated list of compatibles which will be returned instead.
  *
  * Returns:(transfer full): compatible machine types or %NULL
+ *
+ * Since: 0.0.1
  */
 GStrv
 gm_device_tree_get_compatibles (const char *sysfs_root, GError **err)

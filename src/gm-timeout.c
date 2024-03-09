@@ -149,6 +149,8 @@ gm_timeout_source_once_new (gulong timeout_ms)
  * suspend/resume into account: https://gitlab.gnome.org/GNOME/glib/-/issues/2739
  *
  * Returns: the ID (greater than 0) of the event source.
+ *
+ * Since: 0.0.1
  **/
 guint
 gm_timeout_add_seconds_once_full (gint            priority,
@@ -173,7 +175,6 @@ gm_timeout_add_seconds_once_full (gint            priority,
   return id;
 }
 
-
 /**
  * gm_timeout_add_seconds_once:
  * @seconds: the timeout in seconds
@@ -196,6 +197,8 @@ gm_timeout_add_seconds_once_full (gint            priority,
  * suspend/resume into account: https://gitlab.gnome.org/GNOME/glib/-/issues/2739
  *
  * Returns: the ID (greater than 0) of the event source.
+ *
+ * Since: 0.0.1
  **/
 guint
 gm_timeout_add_seconds_once (int             seconds,

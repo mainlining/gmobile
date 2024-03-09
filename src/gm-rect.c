@@ -18,6 +18,8 @@
  * A rectangle.
  *
  * Similar to GdkRectangle but we don't want to pull in gtk/gdk.
+ *
+ * Since: 0.0.1
  */
 
 static GmRect *

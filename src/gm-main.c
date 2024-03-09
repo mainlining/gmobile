@@ -14,6 +14,8 @@
  *
  * Call this function to initialize the library explicitly. This makes
  * the embedded device information available.
+ *
+ * Since: 0.0.1
  */
 void
 gm_init (void)
