@@ -59,9 +59,9 @@ gm_timeout_once_prepare (GSource *source, gint *timeout)
 
 
 static gboolean
-gm_timeout_once_dispatch (GSource    *source,
-                          GSourceFunc callback,
-                          void       *data)
+gm_timeout_once_dispatch (GSource     *source,
+                          GSourceFunc  callback,
+                          void        *data)
 {
   if (!callback) {
     g_warning ("Timeout source dispatched without callback. "
@@ -151,11 +151,11 @@ gm_timeout_source_once_new (gulong timeout_ms)
  * Returns: the ID (greater than 0) of the event source.
  **/
 guint
-gm_timeout_add_seconds_once_full (gint           priority,
-                                  gulong         seconds,
-                                  GSourceFunc    function,
-                                  gpointer       data,
-                                  GDestroyNotify notify)
+gm_timeout_add_seconds_once_full (gint            priority,
+                                  gulong          seconds,
+                                  GSourceOnceFunc function,
+                                  gpointer        data,
+                                  GDestroyNotify  notify)
 {
   g_autoptr (GSource) source = NULL;
   guint id;
@@ -167,7 +167,7 @@ gm_timeout_add_seconds_once_full (gint           priority,
   if (priority != G_PRIORITY_DEFAULT)
     g_source_set_priority (source, priority);
 
-  g_source_set_callback (source, function, data, notify);
+  g_source_set_callback (source, (GSourceFunc)function, data, notify);
   id = g_source_attach (source, NULL);
 
   return id;
@@ -198,9 +198,9 @@ gm_timeout_add_seconds_once_full (gint           priority,
  * Returns: the ID (greater than 0) of the event source.
  **/
 guint
-gm_timeout_add_seconds_once (int         seconds,
-                             GSourceFunc function,
-                             gpointer    data)
+gm_timeout_add_seconds_once (int             seconds,
+                             GSourceOnceFunc function,
+                             gpointer        data)
 {
   g_return_val_if_fail (function != NULL, 0);
 
