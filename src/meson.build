@@ -81,7 +81,7 @@ if get_option('gtk_doc') or get_option('introspection')
    ]
 
   gmobile_gir = gnome.generate_gir(gm_lib,
-                 sources: gm_sources,
+                 sources: gm_public_sources + gm_public_headers,
                nsversion: '0',
                namespace: 'Gm',
          export_packages: 'gmobile-0',
