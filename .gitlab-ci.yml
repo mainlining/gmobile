@@ -1,8 +1,15 @@
+include:
+ - project: 'guidog/meta-phosh'
+   ref: '04a85df2f3311f3012b6c49bf353b376ae0f32b2'
+   file: '/ci/phosh-common-jobs.yml'
+ - remote: 'https://gitlab.freedesktop.org/freedesktop/ci-templates/-/raw/d03cddbcff35f26861429fc816c00323f48e99af/templates/ci-fairy.yml'
+
 image: debian:trixie
 
 stages:
   - build
   - tests
+  - package
   - deploy
 
 variables:
@@ -64,6 +71,15 @@ tests:
   artifacts:
     reports:
       junit: _build/meson-logs/testlog.junit.xml
+
+
+package-deb-debian-trixie:arm64:
+  stage: package
+  variables:
+    PHOSH_DOCKER_IMAGE: debian:trixie
+  extends: .phosh-build-debian-package
+  tags:
+    - aarch64
 
 render-display-info:
   stage: tests
