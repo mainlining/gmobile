@@ -1,10 +1,11 @@
+image: debian:trixie
+
 stages:
   - build
   - tests
   - deploy
 
 variables:
-  DIST: bookworm
   DEPS: >-
     ccache build-essential libglib2.0-dev libjson-glib-dev meson
     python3-toml python3-jinja2 python3-typogrify libgirepository1.0-dev git
@@ -26,7 +27,6 @@ before_script:
     ninja -C _build
 
 build-debian-gcc:
-  image: debian:bookworm
   stage: build
   variables:
     BUILD_OPTS: -Db_coverage=true --werror
@@ -39,7 +39,6 @@ build-debian-gcc:
 
 # TODO: move to prebuilt container
 doc:
-  image: debian:bookworm
   stage: build
   variables:
     BUILD_OPTS: >-
@@ -54,7 +53,6 @@ doc:
       - _doc/
 
 tests:
-  image: debian:bookworm
   stage: tests
   variables:
   needs: ['build-debian-gcc']
@@ -68,7 +66,6 @@ tests:
       junit: _build/meson-logs/testlog.junit.xml
 
 render-display-info:
-  image: debian:bookworm
   stage: tests
   variables:
   needs: ['build-debian-gcc']
