@@ -1,7 +1,9 @@
 /*
- * Copyright (C) 2022 Guido Günther <agx@sigxcpu.org>
+ * Copyright (C) 2022 The Phosh Developers
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * Author: Guido Günther <agx@sigxcpu.org>
  */
 
 #include "gm-error.h"
@@ -351,6 +353,8 @@ normalize_path (const char *path)
  * Returns: `TRUE` when parsing was successful, `FALSE` otherwise.
  *
  * See https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths for path syntax introduction.
+ *
+ * Since: 0.0.1
  */
 gboolean
 gm_svg_path_get_bounding_box (const char *path, int *x1, int *x2, int *y1, int *y2, GError **err)

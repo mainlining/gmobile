@@ -1,5 +1,5 @@
 project('gmobile', 'c',
-        version: '0.0.6',
+        version: '0.1.0-dev',
         license: 'LGPLv2.1+',
         meson_version: '>= 0.56.1',
         default_options: [ 'warning_level=1', 'buildtype=debugoptimized', 'c_std=gnu11' ],
@@ -81,7 +81,7 @@ config_h = configuration_data()
 config_h.set_quoted('GM_VERSION', meson.project_version())
 
 root_inc = include_directories('.')
-configure_file(
+gm_config_h = configure_file(
   output: 'gm-config.h',
   configuration: config_h,
 )
@@ -95,6 +95,7 @@ subdir('doc')
 summary({
     'Examples': get_option('examples'),
     'Tests': get_option('tests'),
+    'Introspection': get_option('introspection'),
     'Docmentation': get_option('gtk_doc'),
   },
   bool_yn: true,

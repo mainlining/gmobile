@@ -8,31 +8,36 @@ gm_deps = [
 ]
 
 gm_public_sources = files(
-  'gmobile.h',
   'gm-cutout.c',
-  'gm-cutout.h',
   'gm-device-info.c',
-  'gm-device-info.h',
   'gm-device-tree.c',
-  'gm-device-tree.h',
   'gm-display-panel.c',
-  'gm-display-panel.h',
   'gm-error.c',
-  'gm-error.h',
   'gm-main.c',
-  'gm-main.h',
   'gm-rect.c',
-  'gm-rect.h',
   'gm-svg-path.c',
-  'gm-svg-path.h',
   'gm-timeout.c',
-  'gm-timeout.h',
   'gm-util.c',
+)
+
+gm_public_headers = files(
+  'gmobile.h',
+  'gm-cutout.h',
+  'gm-device-info.h',
+  'gm-device-tree.h',
+  'gm-display-panel.h',
+  'gm-error.h',
+  'gm-main.h',
+  'gm-rect.h',
+  'gm-svg-path.h',
+  'gm-timeout.h',
   'gm-util.h',
 )
+install_headers(gm_public_headers + [gm_config_h], subdir: 'gmobile')
 
 gm_sources = [
   gm_public_sources,
+  gm_public_headers,
   gm_resources,
 ]
 
@@ -46,8 +51,7 @@ gm_lib = both_libraries(
   include_directories: root_inc,
   c_args: gm_c_args,
   dependencies: gm_deps,
-  # Will switch to '0' for the first release
-  soversion: '0c',
+  soversion: '0',
   install: true)
 
 gmobile_dep = declare_dependency(
@@ -62,12 +66,13 @@ gmobile_shared_dep = declare_dependency(
 
 pkgconfig = import('pkgconfig')
 pkgconfig.generate(
-        gm_lib,
-	description: 'Functions useful in mobile related, glib based projects',
-	url: 'https://world.pages.gitlab.gnome.org/Phosh/gmobile/',
+  gm_lib,
+  subdirs: 'gmobile',
+  description: 'Functions useful in mobile related, glib based projects',
+  url: 'https://world.pages.gitlab.gnome.org/Phosh/gmobile/',
 )
 
-if get_option('gtk_doc')
+if get_option('gtk_doc') or get_option('introspection')
   gmobile_gir_extra_args = [
     '--c-include=gmobile.h',
     '-L@0@'.format(meson.current_build_dir()),
@@ -76,14 +81,14 @@ if get_option('gtk_doc')
    ]
 
   gmobile_gir = gnome.generate_gir(gm_lib,
-                 sources: gm_sources,
+                 sources: gm_public_sources + gm_public_headers,
                nsversion: '0',
                namespace: 'Gm',
-         export_packages: 'gmobile-0',
+         export_packages: 'gmobile',
            symbol_prefix: 'gm',
        identifier_prefix: 'Gm',
                 includes: ['Gio-2.0'],
-                 install: false,
+                 install: get_option('introspection'),
               extra_args: gmobile_gir_extra_args,
    )
 endif

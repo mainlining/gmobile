@@ -1,7 +1,9 @@
 /*
- * Copyright (C) 2023 Guido Günther
+ * Copyright (C) 2022 The Phosh Developers
  *
  * SPDX-License-Identifier: GPL-3-or-later
+ *
+ * Author: Guido Günther <agx@sigxcpu.org>
  */
 
 /* This examples launches phosh and phoc emulationg the display
