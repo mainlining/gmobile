@@ -19,6 +19,7 @@
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,angelican.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,beryllium.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,curtana.json</file>
+    <file preprocess="json-stripblanks">devices/display-panels/xiaomi,daisy.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,dandelion.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,excalibur.json</file>
     <file preprocess="json-stripblanks">devices/display-panels/xiaomi,gram.json</file>
