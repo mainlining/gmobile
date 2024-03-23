@@ -85,12 +85,12 @@ int main (int argc, char **argv)
   GStrv compatibles_opt = NULL;
   g_autofree char *phoc_ini = NULL;
   g_autoptr (GSubprocessLauncher) phoc_launcher = NULL;
-  double scale_opt;
+  double scale_opt = 1.0;
 
   const GOptionEntry options [] = {
     {"compatible", 'c', 0, G_OPTION_ARG_STRING_ARRAY, &compatibles_opt,
      "Device tree compatibles to use for panel lookup ", NULL},
-    {"scale", 's', 1.0, G_OPTION_ARG_DOUBLE, &scale_opt,
+    {"scale", 's', 0, G_OPTION_ARG_DOUBLE, &scale_opt,
      "The display scale", NULL },
     {"version", 0, 0, G_OPTION_ARG_NONE, &version,
      "Show version information", NULL},
