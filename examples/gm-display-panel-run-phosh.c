@@ -85,12 +85,13 @@ int main (int argc, char **argv)
   GStrv compatibles_opt = NULL;
   g_autofree char *phoc_ini = NULL;
   g_autoptr (GSubprocessLauncher) phoc_launcher = NULL;
-  double scale_opt;
+  double scale_opt = 1.0;
+  const char *phosh_bin;
 
   const GOptionEntry options [] = {
     {"compatible", 'c', 0, G_OPTION_ARG_STRING_ARRAY, &compatibles_opt,
      "Device tree compatibles to use for panel lookup ", NULL},
-    {"scale", 's', 1.0, G_OPTION_ARG_DOUBLE, &scale_opt,
+    {"scale", 's', 0, G_OPTION_ARG_DOUBLE, &scale_opt,
      "The display scale", NULL },
     {"version", 0, 0, G_OPTION_ARG_NONE, &version,
      "Show version information", NULL},
@@ -131,6 +132,7 @@ int main (int argc, char **argv)
 
   g_message ("Using %s as phoc config", phoc_ini);
 
+  phosh_bin = g_getenv ("PHOSH_BIN") ?: PHOSH_BIN;
   phoc_launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP);
   g_subprocess_launcher_set_environ (phoc_launcher, NULL);
   g_subprocess_launcher_setenv (phoc_launcher, "WLR_BACKENDS", "wayland", TRUE);
@@ -146,7 +148,7 @@ int main (int argc, char **argv)
   phoc = g_subprocess_launcher_spawnv (phoc_launcher,
                                        (const char * const [])
                                        { "phoc", "-C", phoc_ini,
-                                         "-E", PHOSH_BIN, NULL },
+                                         "-E", phosh_bin, NULL },
                                        &err);
   g_unix_signal_add (SIGTERM, on_shutdown_signal, NULL);
   g_unix_signal_add (SIGINT, on_shutdown_signal, NULL);
