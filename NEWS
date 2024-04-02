@@ -1,3 +1,20 @@
+gmobile 0.1.0
+-------------
+Released: March 2024
+* Split public and private headers
+* Improve API docs
+* Use GSourceOnceFunc for `_once` functions
+  This is a slight API break.
+* Install shared library with .0 soname
+* Make JSON files compatible with recent json-glib
+* Added devices:
+  * Xiaomi Mi A2 Lite
+* Issues fixed:
+  * https://gitlab.gnome.org/World/Phosh/gmobile/-/issues/4
+* Contributors:
+    * Andrea Bolognani
+    * Guido Günther
+
 gmobile 0.0.6
 -------------
 Released: February 2024
