@@ -1,9 +1,9 @@
 # gmobile
 
-gmobile carries some helpers for GNOME on mobile devices. Some of those parts
-might move to glib or libgnome-desktop eventually. It is currently meant to be
-used as a git submodule by projects. There aren't any API stability guarantees
-at this point in time.
+gmobile carries some helpers for glib based environments on mobile devices.
+Some of those parts might move to glib or libgnome-desktop eventually. It can
+be used as a shared library or git submodule. There aren't any API stability
+guarantees at this point in time.
 
 ## License
 

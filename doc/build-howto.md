@@ -6,10 +6,31 @@ Slug: building
 If you need to build gmobile, get the source from
 [here](https://gitlab.gnome.org/World/Phosh/gmobile/) and see the `README.md` file.
 
+## Using pkg-config
+
+Like other libraries, gmobile uses `pkg-config` to provide compiler
+options. The package name is `gmobile`.
+
+
+If you use Automake/Autoconf, in your `configure.ac` script, you might specify
+something like:
+
+```
+PKG_CHECK_MODULES(GMOBILE, [gmobile])
+AC_SUBST(GMOBILE_CFLAGS)
+AC_SUBST(GMOBILE_LIBS)
+```
+
+Or when using the Meson build system you can declare a dependency like:
+
+```meson
+dependency('gmobile')
+```
+
 ## Bundling the library
 
-gmobile is currently not meant to be used as a shared library. It can be bundled
-in one of two ways:
+If you don't want to use the shared library gmobile can be bundled in
+one of two ways:
 
 ### As a git submodule
 
