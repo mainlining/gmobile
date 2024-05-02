@@ -14,9 +14,7 @@ stages:
 
 variables:
   DEPS: >-
-    ccache build-essential libglib2.0-dev libjson-glib-dev meson
-    python3-toml python3-jinja2 python3-typogrify libgirepository1.0-dev git
-    gi-docgen gcovr
+    ccache build-essential git gcovr
 
 before_script:
   - echo "man-db man-db/auto-update boolean false" | debconf-set-selections
@@ -24,6 +22,7 @@ before_script:
   - apt-get -y update
   - apt-get -y install eatmydata
   - eatmydata apt-get -y install $DEPS
+  - eatmydata apt-get -y build-dep .
 
 .build: &build_steps
     echo "BUILD_OPTS=${BUILD_OPTS}" &&
