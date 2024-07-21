@@ -1,0 +1,14 @@
+{
+  "name": "Nothing Phone (1)",
+  "border-radius": 107,
+  "width": 65,
+  "height": 151,
+  "x-res": 1080,
+  "y-res": 2400,
+  "cutouts" : [
+    {
+      "name": "notch",
+      "path": "M 0.0,0.0 h 187.83 v 135.65 h -187.83 Z"
+    }
+  ]
+}
